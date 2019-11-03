@@ -100,7 +100,7 @@ struct ImuPublisher : public PacketCallback
             XsVector a = packet.calibratedAcceleration();
             accel.x = a[0];
             accel.y = a[1];
-            accel.z = a[2];
+            accel.z = -a[2];  // in order to conform to REP 103
         }
 
         // Imu message, publish if any of the fields is available

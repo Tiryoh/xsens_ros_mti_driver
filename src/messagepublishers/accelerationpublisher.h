@@ -54,7 +54,7 @@ struct AccelerationPublisher : public PacketCallback
 
             msg.vector.x = accel[0];
             msg.vector.y = accel[1];
-            msg.vector.z = accel[2];
+            msg.vector.z = -accel[2];  // in order to conform to REP 103
 
             pub.publish(msg);
         }
